@@ -9,13 +9,16 @@ on:
         description: 'The Resource Group where your resources are deployed'
         required: true
         type: string
+        default: "gitops"
       AKSNAME:
         description: 'The Name of the AKS resource'
         required: true
         type: string
+        default: "aks-cluster"
       ACRNAME:
         description: 'The Name of the ACR resource'
         required: true
+        default: "gitopsacr01"
         type: string
       APPNAME:
         description: 'The Name of the Application to deploy'
