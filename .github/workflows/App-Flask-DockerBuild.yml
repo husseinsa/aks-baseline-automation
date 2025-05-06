@@ -144,12 +144,7 @@ jobs:
 
       - name: Deploy app to AKS
         uses: azure/k8s-deploy@v1.5
-        env:
-          ACRNAME: "${{ inputs.ACRNAME}}"
         with:
-          manifests: |
-           workloads/flask/deployment.yaml
-           workloads/flask/ingress.yaml
-          images: |
-            gitopsacr01.azurecr.io/flask:d4b2b49b57fd3bd9d12ad70a587b0e057e5d0fc1
+          manifests: workloads/flask/deployment.yaml
+          images: gitopsacr01.azurecr.io/flask:d4b2b49b57fd3bd9d12ad70a587b0e057e5d0fc1
           namespace: ${{ inputs.NAMESPACE }}
