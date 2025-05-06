@@ -151,5 +151,5 @@ jobs:
            workloads/flask/deployment.yaml
            workloads/flask/ingress.yaml
           images: |
-            ${{ inputs.ACRNAME }}.azurecr.io/${{ inputs.APPNAME }}:${{ github.sha }}
+            gitopsacr01.azurecr.io/flask:d4b2b49b57fd3bd9d12ad70a587b0e057e5d0fc1
           namespace: ${{ inputs.NAMESPACE }}
