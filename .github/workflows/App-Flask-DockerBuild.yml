@@ -143,8 +143,8 @@ jobs:
           if [ "$cmdOut" != 'Active' ]; then kubectl create namespace ${{ inputs.NAMESPACE }}; fi
 
       - name: Deploy app to AKS
-        uses: azure/k8s-deploy@v1.5
+        uses: azure/k8s-deploy@v5.0.3
         with:
           manifests: workloads/flask/deployment.yaml
-          images: gitopsacr01.azurecr.io/flask:d4b2b49b57fd3bd9d12ad70a587b0e057e5d0fc1
+          images: 'gitopsacr01.azurecr.io/flask:d4b2b49b57fd3bd9d12ad70a587b0e057e5d0fc1'
           namespace: ${{ inputs.NAMESPACE }}
